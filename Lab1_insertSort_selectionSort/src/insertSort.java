@@ -4,6 +4,7 @@ public class insertSort {
         int ass = 0, comp = 0;
 
         for (int i = 1; i < arr.length; i++) {
+            comp++;
 
             int key = arr[i];
             ass += 1;
