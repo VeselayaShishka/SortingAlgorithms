@@ -21,7 +21,6 @@ public class quickSort {
         int right = high;
         ass+=3;
 
-
         while(true){
             comp+=2;
             while(left <= right && arr[left] <= pivot){

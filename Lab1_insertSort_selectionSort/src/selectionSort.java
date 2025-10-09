@@ -5,16 +5,13 @@ public class selectionSort {
         int ass = 0, comp = 0;
 
         for(int i = 0; i < arr.length-1; i++) {
-            comp++;
-
             int min = i;
             ass +=1;
 
             for(int j = i + 1; j < (arr.length); j++) {
-                comp+=1;
 
+                comp++;
                 if (arr[j]<arr[min]){
-                    comp++;
                     min = j;
                     ass+=1;
                 }
