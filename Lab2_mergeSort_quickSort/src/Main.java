@@ -14,7 +14,6 @@ public class Main {
     }
 
     public static void print (int[] arr){
-        System.out.print("\n");
         for (int i : arr) {
             System.out.print(i + " ");
         }

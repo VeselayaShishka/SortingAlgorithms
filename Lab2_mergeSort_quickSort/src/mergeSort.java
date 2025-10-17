@@ -1,15 +1,17 @@
 public class mergeSort {
 
-    private static int k =0, ass = 0, comp = 0;;
+    private static int k =0, ass = 0, comp = 0, recur = 0;
 
     public static void mergeSort(int[] A) {
 
         int n =  A.length;
 
+
+        comp++;
         if (n < 2) {
             return;
         }
-        comp++;
+
 
         int mid = n / 2;
         int[] left = new int[mid];
@@ -24,16 +26,24 @@ public class mergeSort {
             right[i - mid] = A[i];
             ass++;
         }
+
+        recur++;
         mergeSort(left);
+
+        recur++;
         mergeSort(right);
 
-        merge(A, left, right, mid, n-mid);
+        System.out.println("\nItteration"+k);
 
-        System.out.println(k +":");
+        System.out.println("left part:");
         Main.print(left);
+         System.out.println("\nright part:");
         Main.print(right);
+
+        System.out.println("\nAfter merge: ");
         Main.print(A);
-        System.out.println("\nAssignees: "+ass+" Comparisons: "+comp);
+
+        System.out.println("\nAssignees: "+ass+" Comparisons: "+comp +"Recursion calls:"+ recur);
         System.out.println("\n");
         k++;
     }
@@ -41,7 +51,7 @@ public class mergeSort {
     public static void merge(int[] A, int[] left, int[] right, int l, int r) {
         int i = 0, j = 0, k = 0;
 
-        comp+=2;
+
         while (i < l && j < r) {
 
             comp++;
@@ -50,19 +60,18 @@ public class mergeSort {
                 A[k++] = left[i++];
                 ass++;
             }
+
             else {
                 A[k++] = right[j++];
                 ass++;
             }
         }
 
-        comp++;
         while (i < l) {
             A[k++] = left[i++];
             ass++;
         }
 
-        comp++;
         while (j < r) {
             A[k++] = right[j++];
             ass++;
